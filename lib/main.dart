@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:test_websocket/pages/login_page.dart';
 
-import 'package:test_websocket/view/user_view.dart';
+import 'package:test_websocket/pages/user_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(builder: EasyLoading.init(), home: UserView());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(textTheme: GoogleFonts.nunitoSansTextTheme()),
+      builder: EasyLoading.init(),
+      home: LoginPage(),
+    );
   }
 }
 
